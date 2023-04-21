@@ -46,7 +46,7 @@ tokenized_datasets
 samples = tokenized_datasets["train"][2990:3005]
 print([len(x) for x in samples["labels"]])
 
-small_eval_dataset = tokenized_datasets["test"].shuffle(seed=42).select(range(3600))
+small_eval_dataset = tokenized_datasets["validation"].shuffle().select(range(80))
 
 def compute_metrics(eval_preds):
     metric = evaluate.load("bleu")
@@ -72,8 +72,8 @@ training_args = TrainingArguments(
     # evaluation will run on entire `eval_dataset` passed in Trainer
     eval_accumulation_steps=5, # Number of predictions steps before moving output tensors to CPU
     evaluation_strategy="steps",
-    eval_steps=2120, # Number of update steps between two evaluations, for use with #evaluation_strategy="steps"
-    logging_steps=2120, # logging happens at eval_steps if logging_steps < eval_steps
+    eval_steps=1060, # Number of update steps between two evaluations, for use with #evaluation_strategy="steps"
+    logging_steps=1060, # logging happens at eval_steps if logging_steps < eval_steps
     
     #num_train_epochs=3,
     max_steps=34336, # if set there will roughly only 1 epoch
