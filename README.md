@@ -1,3 +1,6 @@
+# Natural Explanation of SNLI
+
+## Training Data
 ```
 {'loss': 0.0915, 'learning_rate': 4.536929170549861e-05, 'epoch': 0.09}
 {'eval_loss': 0.10310374200344086, 'eval_bleu': 0.817208404053622, 'eval_precisions': [0.8912066175148354, 0.8348841452289728, 0.8122569894463988, 0.7987220447284346], 'eval_brevity_penalty': 0.9804137377854408, 'eval_length_ratio': 0.9806030682419327, 'eval_translation_length': 5561, 'eval_reference_length': 5671, 'eval_runtime': 40.4007, 'eval_samples_per_second': 1.98, 'eval_steps_per_second': 0.495, 'epoch': 0.09}
